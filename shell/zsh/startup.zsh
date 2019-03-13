@@ -1,4 +1,4 @@
-echo "Welcome back, Jonathan."
+note list
 
 # Terminal title
 DISABLE_AUTO_TITLE="true"

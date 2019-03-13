@@ -39,7 +39,6 @@ set showcmd                                                " Show the command as
 set showmatch                                              " Highlight matching [{()}]
 set lazyredraw                                             " Don't redraw the screen while exectuting macros
 set noshowmode                                             " Disable showing the mode in the status line
-set nowrap                                                 " Disable automatic line wrapping
 
 " -----------------------------------------------------
 " Colourscheme
@@ -52,10 +51,7 @@ if (has("termguicolors"))
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-" Onedark config
-let g:onedark_hide_endofbuffer=1                           " Hide end-of-buffer lines (~)
-let g:onedark_terminal_italics=1                           " Italicize comments
-colorscheme onedark
+colorscheme material
 
 " -----------------------------------------------------
 " Statusline
@@ -114,10 +110,10 @@ autocmd FileType netrw setlocal bufhidden=delete           " Fix the tendency fo
 " Set leader key to <space>
 let mapleader="\<Space>"
 
-" Use hh to escape
-inoremap hh <esc>
-xnoremap hh <esc>
-cnoremap hh <C-c>
+" Use jj to escape
+inoremap jj <esc>
+xnoremap jj <esc>
+cnoremap jj <C-c>
 
 " Deal with the system clipboard
 nnoremap <leader>y "+y
@@ -257,12 +253,10 @@ augroup END
 " =====================================================
 call plug#begin('~/.vim/plugged')
 " Syntax
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript.jsx'] }
 
 " Colours
-Plug 'joshdick/onedark.vim'
 Plug 'kaicataldo/material.vim'
 
 " Other
@@ -301,8 +295,8 @@ let g:ale_fixers={
 let g:user_emmet_leader_key=','                            " Set emmet leader key
 
 " Vim Hardmode
-let g:hardtime_default_on=0                                " Set default off (0) or on (1)
-let g:hardtime_allow_different_key=1                       " Allow key if it's different from previous key. Allows 'jh', but not 'jj'
+let g:hardtime_default_on=1                                " Set default off (0) or on (1)
+let g:hardtime_allow_different_key=1
 
 " Vim Markdown preview
 let vim_markdown_preview_toggle=0                          " Use <C-p> to preview
@@ -326,6 +320,6 @@ let g:startify_files_number=5
 " Overrides
 " -----------------------------------------------------
 if filereadable(expand('~/.vimlocal/vimrc'))
-  source '~/.vimlocal/vimrc'
+"  source ~/.vimlocal/vimrc
 endif
 
