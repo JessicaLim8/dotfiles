@@ -124,10 +124,10 @@ nnoremap <silent> ]L :llast<CR>
 let mapleader="\<Space>"
 
 " Use hh to escape
-inoremap hh <esc>
-inoremap hH <esc>
-xnoremap hh <esc>
-cnoremap hh <C-c>
+inoremap jj <esc>
+inoremap jJ <esc>
+xnoremap jj <esc>
+cnoremap jj <C-c>
 
 " Deal with the system clipboard
 nnoremap <leader>y "+y
