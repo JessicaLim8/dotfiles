@@ -1,8 +1,6 @@
 plugins=(
+  z
   zsh-autosuggestions
   zsh-syntax-highlighting
-  osx
-  web-search
-  z
 )
 
